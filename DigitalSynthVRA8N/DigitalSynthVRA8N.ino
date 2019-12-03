@@ -16,7 +16,7 @@
 
 //#define ENABLE_VOLTAGE_CONTROL    // Make the sketch operate as **VRA8-N mode-VC**
                                   // - See "cv-in.h"
-#define USE_PITCH_CV_IN           // Comment out this line, if you use a MIDI keyboard
+//#define USE_PITCH_CV_IN           // Comment out this line, if you use a MIDI keyboard
 
 
 
