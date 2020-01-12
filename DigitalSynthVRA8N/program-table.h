@@ -40,7 +40,7 @@ const uint8_t g_preset_table_EXP_TO_CUTOFF  [] = {88 , 88 , 88 , 112, 64 , 88 , 
 const uint8_t g_preset_table_EXP_TO_AMP_LEV [] = {127, 127, 127, 127, 127, 127, 127, 127};
 
 const uint8_t g_preset_table_PORTAMENTO     [] = {0  , 0  , 0  , 0  , 32 , 0  , 0  , 0  };
-const uint8_t g_preset_table_LEGATO         [] = {127, 127, 127, 127, 127, 127, 127, 127};
+const uint8_t g_preset_table_LEGATO         [] = {127, 127, 0  , 127, 127, 127, 127, 127};
 const uint8_t g_preset_table_KEY_ASSIGN     [] = {127, 127, 127, 127, 127, 127, 127, 127};
 const uint8_t g_preset_table_EXP_BY_VEL     [] = {0  , 0  , 0  , 0  , 0  , 0  , 0  , 0  };
 

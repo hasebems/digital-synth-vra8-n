@@ -5,9 +5,9 @@
 //#define USE_GATE_IN   // Use GATE Signal Input: Active High (V-Trigger, 5V), SCALE MODE is fixed to Linear (5Oct / 5V)
 
 #define USE_CV_0      // CUTOFF       (Connect a potentiometer or a CV input)
-#define USE_CV_1      // RESONANCE    (Connect a potentiometer or a CV input)
-#define USE_CV_2      // OSC MIX      (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
-#define USE_CV_3      // Pitch CV     (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
+//#define USE_CV_1      // RESONANCE    (Connect a potentiometer or a CV input)
+//#define USE_CV_2      // OSC MIX      (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
+//#define USE_CV_3      // Pitch CV     (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
 //#define USE_CV_4      // OSC WAVE     (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
 //#define USE_CV_5      // GATE Signal  (Connect a potentiometer or a CV input)  // For MIDI Shield, comment out this line
 
@@ -160,10 +160,10 @@ public:
           }
           break;
         case (0x06 << CV_IN_CONTROL_INTERVAL_BITS):
-          m_temp_value = static_cast<uint8_t>(m_analog_value[CV_0_ADC_NO] >> 3);
+          m_temp_value = (m_analog_value[CV_0_ADC_NO] << 2) - 2048;
           break;
         case (0x07 << CV_IN_CONTROL_INTERVAL_BITS):
-          IVoice<0>::control_change(CUTOFF         , static_cast<uint8_t>(m_temp_value));
+          IOsc<0>::set_pitch_bend(m_temp_value);
           break;
       #endif
 
